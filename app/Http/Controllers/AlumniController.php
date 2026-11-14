@@ -8,6 +8,12 @@ use App\Models\Alumni;
 
 class AlumniController extends Controller
 {
+    public function index()
+    {
+        $alumni = Alumni::with('ulasan')->latest()->get();
+        return view('alumni.index', compact('alumni'));
+    }
+    
     public function create()
     {
         return view('alumni.create');

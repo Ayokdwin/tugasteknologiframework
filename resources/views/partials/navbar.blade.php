@@ -13,6 +13,7 @@
                 <a class="nav-link @if (request()->routeIs('beranda')) active @endif" href="{{ route('beranda') }}" @if (request()->routeIs('beranda')) aria-current="page" @endif>Beranda</a>
                 <a class="nav-link @if (request()->routeIs('tentang')) active @endif" href="{{ route('tentang') }}" @if (request()->routeIs('tentang')) aria-current="page" @endif>Tentang</a>
                 <a class="nav-link @if (request()->routeIs('mahasiswa.*')) active @endif" href="{{ route('mahasiswa.index') }}" @if (request()->routeIs('mahasiswa.*')) aria-current="page" @endif>Mahasiswa</a>
+                <a class="nav-link @if (request()->routeIs('alumni.*')) active @endif" href="{{ route('alumni.index') }}" @if (request()->routeIs('alumni.*')) aria-current="page" @endif>Alumni</a>
             </div>
         </div>
     </div>

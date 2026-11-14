@@ -21,6 +21,7 @@ Route::get('/tentang', function () {
     return view('tentang');
 })->name('tentang');
 Route::get('/beranda',[UlasanController::class,'index'])->name('beranda');
+Route::get('/alumni',[AlumniController::class,'index'])->name('alumni.index');
 Route::get('/create/alumni',[AlumniController::class,'create'])->name('alumni.create');
 Route::post('/create/alumni',[AlumniController::class,'store'])->name('alumni.store');
 
