@@ -1,0 +1,18 @@
+:root {
+    --bs-primary: #5546d7;
+    --bs-primary-rgb: 85, 70, 215;
+    --bs-link-color: #5546d7;
+    --bs-link-hover-color: #4133bd;
+}
+
+html { min-width: 320px; scroll-behavior: smooth; }
+body { min-height: 100vh; display: flex; flex-direction: column; background: #f8f9fc; }
+.hero-panel { background: linear-gradient(130deg, #f0efff, #f2f8ff); }
+.hero-panel h1 { max-width: 850px; letter-spacing: -.045em; }
+.hero-panel p { max-width: 650px; line-height: 1.75; }
+.avatar-circle { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; border-radius: 50%; color: #5546d7; background: #efedff; font-weight: 700; text-transform: uppercase; }
+#features { scroll-margin-top: 90px; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
