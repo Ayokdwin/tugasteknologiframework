@@ -41,7 +41,7 @@ class AlumniController extends Controller
             ]);
         });
 
-        return redirect()->route('beranda')->with('success', 'Data alumni berhasil ditambahkan.');
+        return redirect()->route('alumni.index')->with('success', 'Data alumni berhasil ditambahkan.');
     }
     public function edit($id)
     {
