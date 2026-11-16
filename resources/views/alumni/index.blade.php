@@ -54,9 +54,9 @@
                             <dl class="mb-0 small">
                                 <div class="d-flex gap-2 mb-2"><dt class="text-secondary fw-normal">NIM</dt><dd class="mb-0 fw-semibold">{{ $alum->nim }}</dd></div>
                                 <div>
-                                    <dt class="text-secondary fw-normal">Pekerjaan</dt><dd class="mb-0">{{ $alum->pekerjaan }}</dd>
-                                    <a href="" class="btn btn-sm btn-outline-primary">Edit</a>
-                                    <form action="" method="POST" class="d-inline">
+                                    <dt class="text-secondary fw-normal">Pekerjaan</dt><dd class="mb-0">{{ $alum->pekerjaan ?? 'Belum diisi' }}</dd>
+                                    <a href="{{ route('alumni.edit', $alum->id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
+                                    <form action="{{ route('alumni.destroy', $alum->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>

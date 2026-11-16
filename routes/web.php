@@ -14,6 +14,7 @@ route::prefix('perpus')->name('perpus')->group(function () {
     Route::post('/pinjam',[PerpusController::class,'prosesPinjam'])->name('prosesPinjam');
     Route::get('/{id}',[PerpusController::class,'show'])->name('detail');
     Route::delete('/delete/{id}',[PerpusController::class,'delete'])->name('delete');
+    
 
 });
 
@@ -24,6 +25,9 @@ Route::get('/beranda',[UlasanController::class,'index'])->name('beranda');
 Route::get('/alumni',[AlumniController::class,'index'])->name('alumni.index');
 Route::get('/create/alumni',[AlumniController::class,'create'])->name('alumni.create');
 Route::post('/create/alumni',[AlumniController::class,'store'])->name('alumni.store');
+Route::get('/edit/alumni/{id}',[AlumniController::class,'edit'])->name('alumni.edit');
+Route::put('/edit/alumni/{id}',[AlumniController::class,'update'])->name('alumni.update');
+Route::delete('/delete/alumni/{id}',[AlumniController::class,'destroy'])->name('alumni.destroy');
 
 Route::get('/ulasan/create',[UlasanController::class,'create'])->name('ulasan.create');
 Route::post('/ulasan',[UlasanController::class,'store'])->name('ulasan.store');

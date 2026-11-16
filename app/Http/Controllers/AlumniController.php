@@ -43,4 +43,35 @@ class AlumniController extends Controller
 
         return redirect()->route('beranda')->with('success', 'Data alumni berhasil ditambahkan.');
     }
+    public function edit($id)
+    {
+        $alumni = Alumni::findOrFail($id);
+        return view('alumni.edit', compact('alumni'));
+    }
+    public function update(Request $request, $id)
+    {
+        $alumni = Alumni::findOrFail($id);
+
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'nim' => 'required|string|max:20|unique:alumni,nim,' . $alumni->id,
+            'jurusan' => 'required|string|max:100',
+            'pekerjaan' => 'required|string|max:100',
+            'tahun_lulus' => 'required|integer|min:1900|max:' . date('Y'),
+        ]);
+
+        $alumni->update($request->only([
+            'nama', 'nim', 'jurusan', 'pekerjaan', 'tahun_lulus',
+        ]));
+
+        return redirect()->route('alumni.index')->with('success', 'Data alumni berhasil diperbarui.');
+    }
+    public function destroy($id)
+    {
+        $alumni = Alumni::findOrFail($id);
+        $alumni->delete();
+
+        return redirect()->route('alumni.index')->with('success', 'Data alumni berhasil dihapus.');
+    }
+
 }
